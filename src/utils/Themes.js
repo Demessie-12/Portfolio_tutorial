@@ -11,7 +11,6 @@ export const darkTheme = {
   black: "#000000",
 };
 
-
 export const lightTheme = {
   bg: "#FFFFFF",
   bgLight: "#f0f0f0",
