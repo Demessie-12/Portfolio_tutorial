@@ -46,7 +46,7 @@ const NavLogo = styled(LinkR)`
 
 const MobileIcon = styled.div`
 display: none;
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 768px) {
   display: block;
   position: absolute;
   top: 0;
@@ -88,7 +88,7 @@ justify-content: end;
 width: 80%;
 height: 100%;
 padding: 0 6px;
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 768px) {
   display: none;
 }
 `
@@ -122,6 +122,14 @@ export const Span = styled.div`
   font-size: 18px;
 `
 
+const MobileMenuBack = styled.div`
+  position: absolute;
+  height: 2000px;
+  overflow-y: hidden;
+  width: 100vw;
+  background: transparent;
+`
+
 const MobileMenu = styled.div`
   display: flex;
   flex-direction: column;
@@ -139,17 +147,6 @@ const MobileMenu = styled.div`
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   opacity: ${({open}) => (open ? "1" : "0")};
   z-index: ${({open}) => (open ? "1" : "-1")};
-`
-
-const MobileMenuLinks = styled(LinkR)`
-  color: ${({theme}) => theme.text_primary};
-  font-weight: 500;
-  cursor: pointer;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
-  &:hover {
-    color: ${({theme}) => theme.primary};
-  }
 `
 
 const Navbar = () => {
@@ -196,35 +193,40 @@ const Navbar = () => {
       </NavContainer>
       {
         isopen && (
+          <>
+          <MobileMenuBack onClick={() => {
+            setIsOpen(!isopen)
+          }}>
+          </MobileMenuBack>
           <MobileMenu open={isopen}>
-            <MobileMenuLinks
+            <NavLink
               href="#about"
               onClick={() => {
                 setIsOpen(!isopen)
               }}
               >About
-              </MobileMenuLinks>
-            <MobileMenuLinks
+              </NavLink>
+            <NavLink
               href="#skills"
               onClick={() => {
                 setIsOpen(!isopen)
               }}
               >Skills
-              </MobileMenuLinks>
-            <MobileMenuLinks
+              </NavLink>
+            <NavLink
               href="#projects"
               onClick={() => {
                 setIsOpen(!isopen)
               }}
               >Projects
-              </MobileMenuLinks>
-            <MobileMenuLinks
+              </NavLink>
+            <NavLink
               href="/#education"
               onClick={() => {
                 setIsOpen(!isopen)
               }}
               >Education
-              </MobileMenuLinks>
+              </NavLink>
               <GithubButton
                 style={{
                   padding: "10px 16px",
@@ -238,6 +240,7 @@ const Navbar = () => {
                   Github Profile
                 </GithubButton>
           </MobileMenu>
+          </>
         )
       }
     </Nav>)

@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import {Bio} from "../../data/constant"
 import Typewriter from 'typewriter-effect'
+import Portfolio_image from "../../image/Portfolio_image.jpg"
+import HeroBgAnimation from "../HeroBgAnimation"
 
 const HeroContainer = styled.div`
   background-color: ${({theme}) => theme.card_light};
@@ -31,7 +33,7 @@ const HeroBg = styled.div`
   bottom: 0;
   left: 50%;
   overflow: hidden;
-  width: 100%;
+  width: 85%;
   height: 100%;
   padding: 0 30px;
   -webkit-transform: translateX(-50%) translateY(-50%);
@@ -86,6 +88,8 @@ const HeroRightContainer = styled.div`
     order: 1;
     margin-bottom: 80px;
     align-items: center;
+    display:flex;
+    justify-content: center;
   }
 
   @media screen and (max-width: 640px) {
@@ -95,7 +99,7 @@ const HeroRightContainer = styled.div`
 `
 
 const Title = styled.div`
-  font-size: 50px;
+  font-size: 43.5px;
   font-weight: 700;
   color: ${({theme}) => theme.text_primary};
   line-height: 68px;
@@ -177,12 +181,35 @@ const ResumeButton = styled.a`
   }
 `
 
+const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 50%;
+  max-height: 400px;
+  max-width: 400px;
+  object-fit: cover;
+  object-position: center;
+  border: 2px solid ${({theme}) => theme.primary};
+
+  @media screen and (max-width: 960px) {
+    max-width: 400px;
+    max-height: 400px;
+  }
+  @media screen and (max-width: 640px) {
+    max-width: 300px;
+    max-height: 300px;
+  }
+`
+
 
 const Hero = () => {
   return (
     <div id='about'>
       <HeroContainer>
-        <HeroBg></HeroBg>
+        <HeroBg>
+          <HeroBgAnimation />
+        </HeroBg>
         <HeroInnerContainer>
           <HeroLeftContainer>
             <Title>
@@ -206,7 +233,9 @@ const Hero = () => {
               Check Resume
             </ResumeButton>
           </HeroLeftContainer>
-          <HeroRightContainer>Ethiopia</HeroRightContainer>
+          <HeroRightContainer>
+            <Image src={Portfolio_image} alt="Portfolio_image" />
+          </HeroRightContainer>
         </HeroInnerContainer>
       </HeroContainer>
 
