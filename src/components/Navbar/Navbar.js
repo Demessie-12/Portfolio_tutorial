@@ -96,7 +96,7 @@ padding: 0 6px;
 const GithubButton = styled.button`
 background-color: transparent;
 color: ${({theme}) => theme.primary};
-border: 1.8px solid ${({theme}) => theme.primary};
+border: 2.5px solid ${({theme}) => theme.primary};
 border-radius: 20px;
 display: flex;
 justify-content: center;
@@ -120,6 +120,9 @@ export const Span = styled.div`
   padding: 0 4px;
   font-weight: bold;
   font-size: 18px;
+  &:hover {
+    color: ${({theme}) => theme.primary};
+  }
 `
 
 const MobileMenuBack = styled.div`
