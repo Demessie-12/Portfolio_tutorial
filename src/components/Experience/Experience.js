@@ -17,7 +17,7 @@ const Container = styled.div`
   position: relative;
   z-index: 1;
   align-items: center;
-  margin-top: 20px;
+  padding-top: 60px;
 `
 
 const Wrapper = styled.div`
@@ -71,7 +71,7 @@ const TimeLineSection = styled.div`
 
 function Experience() {
   return (
-    <Container>
+    <Container id='experience'>
         <Wrapper>
             <Title>Experience</Title>
             <Desc>Here are some of my projects</Desc>

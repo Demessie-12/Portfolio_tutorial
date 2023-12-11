@@ -217,6 +217,13 @@ const Navbar = () => {
               >Skills
               </NavLink>
             <NavLink
+              href="#experience"
+              onClick={() => {
+                setIsOpen(!isopen)
+              }}
+              >Experience
+              </NavLink>
+            <NavLink
               href="#projects"
               onClick={() => {
                 setIsOpen(!isopen)
