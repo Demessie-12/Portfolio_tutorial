@@ -17,7 +17,7 @@ const Container = styled.div`
   position: relative;
   z-index: 1;
   align-items: center;
-  padding-top: 60px;
+  padding: 60px 0;
 `
 
 const Wrapper = styled.div`
@@ -81,7 +81,7 @@ function Experience() {
                         <TimelineItem>
                             <TimelineSeparator>
                                 <TimelineDot variant='outlined' color='secondary' />
-                                {index !== experiences.length -1 && <TimelineConnector />}
+                                {index !== experiences.length -1 && <TimelineConnector style={{ background: '#854CE6' }} />}
                             </TimelineSeparator>
                             <TimelineContent sx={{py: "12px", px: "2"}} >
                                 <ExperienceCard Experience={experience} />
