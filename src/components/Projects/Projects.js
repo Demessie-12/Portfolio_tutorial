@@ -98,7 +98,7 @@ const CardContainer = styled.div`
 
 
 
-function Projects() {
+function Projects({openModal, setOpenModal}) {
     const [toogle, setToogle] = useState("all")
 
   return (
@@ -127,8 +127,8 @@ function Projects() {
         </ToogleGroup>
 
         <CardContainer>
-            {toogle === "all" && projects.map((project) => <ProjectCard project={project} />)}
-            {projects.filter((item) => item.category === toogle).map((project) => <ProjectCard project={project} />)}
+            {toogle === "all" && projects.map((project) => <ProjectCard project={project} openModal={openModal} setOpenModal={setOpenModal}/>)}
+            {projects.filter((item) => item.category === toogle).map((project) => <ProjectCard project={project} openModal={openModal} setOpenModal={setOpenModal}/>)}
         </CardContainer>
       </Wrapper>
     </Container>

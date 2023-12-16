@@ -150,6 +150,10 @@ const MobileMenu = styled.div`
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   opacity: ${({open}) => (open ? "1" : "0")};
   z-index: ${({open}) => (open ? "1" : "-1")};
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 `
 
 const Navbar = () => {
