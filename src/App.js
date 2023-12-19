@@ -10,6 +10,8 @@ import Projects from "./components/Projects/Projects";
 import Education from "./components/Education/Education";
 import { useState } from "react";
 import ProjectDetails from "./components/ProjectDetails/ProjectDetails";
+import Contact from "./components/Contact/Contact";
+import Footer from "./components/Footer/Footer";
 
 const Body = styled.div`
   background-color: ${({ theme }) => theme.bg};
@@ -41,7 +43,9 @@ function App() {
           <Projects openModal={openModal} setOpenModal={setOpenModal}/>
           <Wrapper>
             <Education />
+            <Contact />
           </Wrapper>
+          <Footer />
           {openModal.state && 
             <ProjectDetails openModal={openModal} setOpenModal={setOpenModal} />
           }
